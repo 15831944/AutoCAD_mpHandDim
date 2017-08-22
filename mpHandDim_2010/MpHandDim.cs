@@ -7,7 +7,8 @@ using System.Collections.Generic;
 using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.EditorInput;
 using Autodesk.AutoCAD.Runtime;
-using mpMsg;
+using ModPlusAPI;
+using ModPlusAPI.Windows;
 
 
 namespace mpHandDim
@@ -17,6 +18,7 @@ namespace mpHandDim
         [CommandMethod("ModPlus", "MpHandDim", CommandFlags.UsePickSet | CommandFlags.Redraw)]
         public static void Main()
         {
+            Statistic.SendCommandStarting(new Interface());
             try
             {
                 var doc = AcApp.DocumentManager.MdiActiveDocument;
@@ -57,7 +59,7 @@ namespace mpHandDim
             }
             catch (Exception ex)
             {
-                MpExWin.Show(ex);
+                ExceptionBox.Show(ex);
             }
         }
         // Выделение цветом
