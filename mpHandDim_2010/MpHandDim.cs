@@ -15,6 +15,8 @@ namespace mpHandDim
 {
     public class MpHandDim
     {
+        private const string LangItem = "mpHandDim";
+
         [CommandMethod("ModPlus", "MpHandDim", CommandFlags.UsePickSet | CommandFlags.Redraw)]
         public static void Main()
         {
@@ -27,14 +29,15 @@ namespace mpHandDim
                 // Выбираем размеры
                 var options = new PromptSelectionOptions
                 {
-                    MessageForAdding = "\nВыберите размеры: "
+                    MessageForAdding = "\n" + Language.GetItem(LangItem, "msg1")
                 };
                 var valueArray = new[] { new TypedValue(0, "Dimension") };
                 var filter = new SelectionFilter(valueArray);
                 var selection = ed.GetSelection(options, filter);
                 if (selection.Status != PromptStatus.OK) return;
                 // Задаем условие
-                var pko = new PromptKeywordOptions("Опции [Цвет/вЫбрать/Восстановить/Удалить]", "Color Select Restore Delete")
+                var pko = new PromptKeywordOptions(Language.GetItem(LangItem, "msg2"),
+                    "Color Select Restore Delete")
                 {
                     AllowArbitraryInput = true, AllowNone = true
                 };
