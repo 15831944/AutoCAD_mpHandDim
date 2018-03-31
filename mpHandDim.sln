@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mpHandDim_2010", "mpHandDim_2010\mpHandDim_2010.csproj", "{2AC20967-935D-400F-A17F-8DF487CE5AB5}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mpHandDim_2017", "mpHandDim_2017\mpHandDim_2017.csproj", "{F1AF5235-7F29-472E-99B2-769E258040CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mpHandDim_2018", "mpHandDim_2018\mpHandDim_2018.csproj", "{4FC17CC4-43E3-42A2-9CAA-3EE4B29E1753}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mpHandDim_2019", "mpHandDim_2019\mpHandDim_2019.csproj", "{19AC679E-D273-4935-A13F-24128E138EDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,8 +65,15 @@ Global
 		{4FC17CC4-43E3-42A2-9CAA-3EE4B29E1753}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FC17CC4-43E3-42A2-9CAA-3EE4B29E1753}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FC17CC4-43E3-42A2-9CAA-3EE4B29E1753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19AC679E-D273-4935-A13F-24128E138EDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19AC679E-D273-4935-A13F-24128E138EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19AC679E-D273-4935-A13F-24128E138EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19AC679E-D273-4935-A13F-24128E138EDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {939292F7-7C9B-4438-93D3-01C0BD66108B}
 	EndGlobalSection
 EndGlobal
