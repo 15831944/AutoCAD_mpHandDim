@@ -1,18 +1,13 @@
-﻿#if ac2010
-using AcApp = Autodesk.AutoCAD.ApplicationServices.Application;
-#elif ac2013
-using AcApp = Autodesk.AutoCAD.ApplicationServices.Core.Application;
-#endif
-using System.Collections.Generic;
-using Autodesk.AutoCAD.DatabaseServices;
-using Autodesk.AutoCAD.EditorInput;
-using Autodesk.AutoCAD.Runtime;
-using ModPlusAPI;
-using ModPlusAPI.Windows;
-
-
-namespace mpHandDim
+﻿namespace mpHandDim
 {
+    using AcApp = Autodesk.AutoCAD.ApplicationServices.Core.Application;
+    using System.Collections.Generic;
+    using Autodesk.AutoCAD.DatabaseServices;
+    using Autodesk.AutoCAD.EditorInput;
+    using Autodesk.AutoCAD.Runtime;
+    using ModPlusAPI;
+    using ModPlusAPI.Windows;
+
     public class MpHandDim
     {
         private const string LangItem = "mpHandDim";
@@ -68,8 +63,8 @@ namespace mpHandDim
         // Выделение цветом
         private static void SetColor(IEnumerable<ObjectId> objids, Database db)
         {
-            var colordialog = new Autodesk.AutoCAD.Windows.ColorDialog();
-            if (colordialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            var colorDialog = new Autodesk.AutoCAD.Windows.ColorDialog();
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 using (var tr = db.TransactionManager.StartTransaction())
                 {
@@ -77,20 +72,20 @@ namespace mpHandDim
                     {
                         var dim = (Dimension)tr.GetObject(objid, OpenMode.ForWrite);
                         if (!string.IsNullOrEmpty(dim.DimensionText))
-                            dim.Color = colordialog.Color;
+                            dim.Color = colorDialog.Color;
                     }
                     tr.Commit();
                 }
             }
         }
         // Восстановление
-        private static void Restore(IEnumerable<ObjectId> objids, Database db)
+        private static void Restore(IEnumerable<ObjectId> objIds, Database db)
         {
             using (var tr = db.TransactionManager.StartTransaction())
             {
-                foreach (var objid in objids)
+                foreach (var objectId in objIds)
                 {
-                    var dim = (Dimension)tr.GetObject(objid, OpenMode.ForWrite);
+                    var dim = (Dimension)tr.GetObject(objectId, OpenMode.ForWrite);
                     if (!string.IsNullOrEmpty(dim.DimensionText))
                         dim.DimensionText = string.Empty;
                 }
@@ -98,18 +93,18 @@ namespace mpHandDim
             }
         }
         // Выделение
-        private static void SetSelection(IEnumerable<ObjectId> objids, Database db)
+        private static void SetSelection(IEnumerable<ObjectId> objIds, Database db)
         {
             using (var tr = db.TransactionManager.StartTransaction())
             {
-                var objidsList = new List<ObjectId>();
-                foreach (var objid in objids)
+                var objectIds = new List<ObjectId>();
+                foreach (var objectId in objIds)
                 {
-                    var dim = (Dimension)tr.GetObject(objid, OpenMode.ForWrite);
+                    var dim = (Dimension)tr.GetObject(objectId, OpenMode.ForWrite);
                     if (!string.IsNullOrEmpty(dim.DimensionText))
-                        objidsList.Add(dim.ObjectId);
+                        objectIds.Add(dim.ObjectId);
                 }
-                AcApp.DocumentManager.MdiActiveDocument.Editor.SetImpliedSelection(objidsList.ToArray());
+                AcApp.DocumentManager.MdiActiveDocument.Editor.SetImpliedSelection(objectIds.ToArray());
 
                 tr.Commit();
             }
@@ -119,9 +114,9 @@ namespace mpHandDim
         {
             using (var tr = db.TransactionManager.StartTransaction())
             {
-                foreach (var objid in objids)
+                foreach (var objectId in objids)
                 {
-                    var dim = (Dimension)tr.GetObject(objid, OpenMode.ForWrite);
+                    var dim = (Dimension)tr.GetObject(objectId, OpenMode.ForWrite);
                     if (!string.IsNullOrEmpty(dim.DimensionText))
                         dim.Erase();
                 }

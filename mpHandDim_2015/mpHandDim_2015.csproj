@@ -16,31 +16,31 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\..\..\ModPlus\Functions\mpHandDim\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;ac2013</DefineConstants>
+    <OutputPath>..\..\..\..\..\..\..\ModPlus\Functions\AutoCAD\mpHandDim\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\..\..\ModPlus\Functions\mpHandDim\</OutputPath>
-    <DefineConstants>TRACE;ac2013</DefineConstants>
+    <OutputPath>..\..\..\..\..\..\..\ModPlus\Functions\AutoCAD\mpHandDim\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="accoremgd">
-      <HintPath>..\..\..\..\_Acad dlls\2015\accoremgd.dll</HintPath>
+      <HintPath>C:\_Acad dlls\2015\accoremgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="acdbmgd">
-      <HintPath>..\..\..\..\_Acad dlls\2015\acdbmgd.dll</HintPath>
+      <HintPath>C:\_Acad dlls\2015\acdbmgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="acmgd">
-      <HintPath>..\..\..\..\_Acad dlls\2015\acmgd.dll</HintPath>
+      <HintPath>C:\_Acad dlls\2015\acmgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ModPlusAPI">
@@ -52,18 +52,27 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\mpHandDim_2010\MpHandDim.cs">
+    <Compile Include="..\mpHandDim_2013\MpHandDim.cs">
       <Link>MpHandDim.cs</Link>
+    </Compile>
+    <Compile Include="..\mpHandDim_2013\Properties\AssemblyInfoCommon.cs">
+      <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
     <Compile Include="Interface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="..\mpHandDim_2010\Resources\MpHandDim_16x16.png">
-      <Link>Resources\MpHandDim_16x16.png</Link>
+    <Resource Include="..\mpHandDim_2013\Resources\mpHandDim_16x16.png">
+      <Link>Resources\mpHandDim_16x16.png</Link>
     </Resource>
-    <Resource Include="..\mpHandDim_2010\Resources\MpHandDim_32x32.png">
-      <Link>Resources\MpHandDim_32x32.png</Link>
+    <Resource Include="..\mpHandDim_2013\Resources\mpHandDim_16x16_dark.png">
+      <Link>Resources\mpHandDim_16x16_dark.png</Link>
+    </Resource>
+    <Resource Include="..\mpHandDim_2013\Resources\mpHandDim_32x32.png">
+      <Link>Resources\mpHandDim_32x32.png</Link>
+    </Resource>
+    <Resource Include="..\mpHandDim_2013\Resources\mpHandDim_32x32_dark.png">
+      <Link>Resources\mpHandDim_32x32_dark.png</Link>
     </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
