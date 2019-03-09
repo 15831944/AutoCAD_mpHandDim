@@ -15,7 +15,7 @@
         [CommandMethod("ModPlus", "MpHandDim", CommandFlags.UsePickSet | CommandFlags.Redraw)]
         public static void Main()
         {
-            Statistic.SendCommandStarting(new Interface());
+            Statistic.SendCommandStarting(new ModPlusConnector());
             try
             {
                 var doc = AcApp.DocumentManager.MdiActiveDocument;

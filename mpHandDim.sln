@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28705.295
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mpHandDim_2013", "mpHandDim_2013\mpHandDim_2013.csproj", "{005379A6-A956-466B-910A-1135341407F9}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mpHandDim_2018", "mpHandDim_2018\mpHandDim_2018.csproj", "{4FC17CC4-43E3-42A2-9CAA-3EE4B29E1753}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mpHandDim_2019", "mpHandDim_2019\mpHandDim_2019.csproj", "{19AC679E-D273-4935-A13F-24128E138EDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mpHandDim_2020", "mpHandDim_2020\mpHandDim_2020.csproj", "{A4C43861-D140-4963-9AE7-543E4270FB80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{19AC679E-D273-4935-A13F-24128E138EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19AC679E-D273-4935-A13F-24128E138EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19AC679E-D273-4935-A13F-24128E138EDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4C43861-D140-4963-9AE7-543E4270FB80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4C43861-D140-4963-9AE7-543E4270FB80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4C43861-D140-4963-9AE7-543E4270FB80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4C43861-D140-4963-9AE7-543E4270FB80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
